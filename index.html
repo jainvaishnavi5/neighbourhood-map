@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1">
+		<title>Haunt Begins</title>
+		<link rel="shortcut icon" href="halloween-ghost.png">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container-main">
+			<div class="row">
+				<div class="col-12">
+					<div class="top-header">
+						<h1 class="top-header">
+							THE UNEXPLORED: TOP 5 HAUNTED PLACES ON EARTH
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div id="container-main" class="row">
+				<div class="col-9">
+					<div id="map" class="map"></div>
+				</div>
+				<div id="container-inside" class="container-inside col-3">
+					<div id="List-division">
+						<label class="list-heading">Search Places :</label>
+						<br>
+						<br>
+						<div id="find">
+							<form align="center">
+								<input data-bind="value:searchList, valueUpdate:'afterkeydown', event: {keyup: search}" placeholder="Search" type="text">
+								<input type="submit" value="Reset" class="button">
+							</form>
+						</div>
+						<div class="list">
+							<br>
+							<label class="list-heading">Places :</label>
+							<br>
+							<br>
+							<ul data-bind="foreach:List">
+								<li class="list" data-bind="visible:filtered, event:{click:$parent.show},text:title"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js">
+		</script>
+		<script src="js/knockout.js">
+		</script>
+		<script src="js/bootstrap.js">
+		</script>
+		<script src="js/app.js"></script>
+		<script src='http://use.edgefonts.net/de-walpergens-pica.js'></script>
+		<script src='http://use.edgefonts.net/emilys-candy.js'></script>
+		<script src='http://use.edgefonts.net/nosifer.js'></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?libraries
+		=geometry&key=AIzaSyCSL7SUMHgkroMN3UuQOHahVWlNiSlhWis&v=3&callback=mapInit" onerror="maper()">
+		</script>
+	</body>
+</html>

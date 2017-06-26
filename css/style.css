@@ -1,0 +1,196 @@
+.container-inside {
+	margin-top: 20px;
+	padding:10px;
+	position: relative;
+	height: 100%;
+}
+
+input {
+	position: relative;
+	width: 70%;
+	padding: 12px 20px 12px 20px;
+	margin: 8px 0;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.map {
+	width : auto;
+	height: 520px;
+	background-color: black;
+	border: 3px solid #050505;
+    border-radius: 10px;
+}
+
+body {
+	background-image: url("haunted.jpg");
+	color: #050505;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	height: 100%;
+}
+
+.button {
+	font-family: "emilys-candy.js", cursive, sans-serif;
+    background-color: #020202;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+	opacity: 0.7;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+}
+
+a {
+	color: #050505;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+	border: none;
+    border-radius: 4px;
+	opacity: 0.4;
+}
+
+input[type=text]:hover {
+    cursor:url(ghost2.png),auto;
+	background-color: black;
+	color: white;
+	
+}
+
+.button:hover, li:hover {
+	color: black;
+	background-color: white;
+	cursor:url(ghost.png),auto;
+	opacity: 0.5;
+}
+
+li {
+	list-style-position: inside;
+	list-style-type: none;
+	padding: 10px 10px;
+	font-family: "emilys-candy.js", cursive, sans-serif;
+	background: black;
+	border-bottom: white 1.5px solid;
+	color: #050505;
+	opacity: 0.7;
+}
+
+.list-heading {
+	font-family: "nosifer", Gadget, sans-serif ;
+	color: white;
+	font-size: 1.3em;
+}
+
+.list {
+	color: white;
+	width: 100%;
+	height: 100%;
+	padding-top: 10px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.3%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.top-header {
+	font-family: "de-walpergens-pica", cursive, sans-serif;
+	background: black;
+	height: 50px;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 1.4vw;
+	opacity: 0.7;
+	line-height: 50px;
+	color: white;
+	letter-spacing: 1.7px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .top-header {
+        font-size: 2.25vw;
+    }
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+	
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+.container-main {
+	max-width: 100%;
+	margin: 0 auto;
+	height: 100%
+}
