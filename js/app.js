@@ -62,7 +62,7 @@ var VM = function() {	//function showing info box
 	}
 	function openBox(placeMark, infoBox) {		//function to open infobox
 		infoBox.placeMark = placeMark;
-		var imscript= '<img src="'+placeMark.gim+'" style="height:200px;width:300 px;" alt="'+placeMark.title+'"/>'
+		var imscript= '<img src="'+placeMark.gim+'" style="height:200px;width:300 px;" alt="'+placeMark.title+'"/>';
 		var er='could not find image';
 		placeMark.gim?imscript=imscript:imscript=er;
 		infoBox.setContent('<div><h3><center><b>' + placeMark.title +',</b><br>'+placeMark.country+ '</center></h3>'+ imscript+'<br><br>'+ placeMark.wikiresponse +'</div>');
@@ -98,7 +98,7 @@ var VM = function() {	//function showing info box
 	function see(x,y=true) {
 		x.filtered(y);
 				x.setVisible(y);
-	};
+	}
 	function info(placeMark) {
     $.ajax({
       type: "GET",
