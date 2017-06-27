@@ -1,4 +1,5 @@
 /* array containing places*/
+
 var neighbour = [
 {
 	title: 'Bhangarh Fort',
@@ -31,6 +32,7 @@ var neighbour = [
 	country: 'Italy'
 	}
 ];
+
 var List = [];
 var VM = function() {	//function showing info box
 	var self = this;
@@ -56,8 +58,8 @@ var VM = function() {	//function showing info box
 		placeMark.setVisible(true);
 		placeMark.setAnimation(google.maps.Animation.BOUNCE);
 		setTimeout(function () {
-        placeMark.setAnimation(null);
-      }, 2100);
+			placeMark.setAnimation(null);
+		}, 2100);
 		openBox(placeMark, infoBox);	
 	}
 	function openBox(placeMark, infoBox) {		//function to open infobox
@@ -100,49 +102,49 @@ var VM = function() {	//function showing info box
 				x.setVisible(y);
 	}
 	function info(placeMark) {
-    $.ajax({
-      type: "GET",
-      url: 'https://en.wikipedia.org/w/api.php' +
-      '?action=opensearch' +
-      '&search=' + placeMark.title +          // search query
-      '&limit=1' +          // return only the first wikipediaResult
-      '&namespace=0' +         // search only articles, ignoring Talk, Mediawiki, etc.
-      '&format=json',
-      dataType: "jsonp",
-      success: function (response) {    //success function works when above connection is successfull.
-        var wikiRs = response[2][0];
-		wikiRs?placeMark.wikiresponse = wikiRs:placeMark.wikiresponse = "Rating Not Found";
-      },
-      error: function (r) {      //success function works when above connection fails.
-        alert("Error loading wikipedia "+r);
-      }
-    });
-	
-	var apiKey = '7xe5qqkfsd67ad5qmwmcj52c'; //gettyimages key
-	var x = placeMark.title;  //marker title
-	$.ajax({
-		type: 'GET',	
-		beforeSend: function (request) {
-			request.setRequestHeader("Api-Key", apiKey);
-		},
-		url: "https://api.gettyimages.com/v3/search/images/creative?phrase=" + x,
-	}).done(function (response) { //successful connection
+		$.ajax({
+			type: "GET",
+			url: 'https://en.wikipedia.org/w/api.php' +
+			'?action=opensearch' +
+			'&search=' + placeMark.title +          // search query
+			'&limit=1' +          // return only the first wikipediaResult
+			'&namespace=0' +         // search only articles, ignoring Talk, Mediawiki, etc.
+			'&format=json',
+			dataType: "jsonp",
+			success: function (response) {    //success function works when above connection is successfull.
+			var wikiRs = response[2][0];
+			wikiRs?placeMark.wikiresponse = wikiRs:placeMark.wikiresponse = "Rating Not Found";
+			},
+			error: function (r) {      //success function works when above connection fails.
+			alert("Error loading wikipedia "+r);
+			}
+		});
+		
+		var apiKey = '7xe5qqkfsd67ad5qmwmcj52c'; //gettyimages key
+		var x = placeMark.title;  //marker title
+		$.ajax({
+			type: 'GET',	
+			beforeSend: function (request) {
+				request.setRequestHeader("Api-Key", apiKey);
+			},
+			url: "https://api.gettyimages.com/v3/search/images/creative?phrase=" + x,
+		}).done(function (response) { //successful connection
 			placeMark.gim=response.images[0].display_sizes[0].uri;
 		})
-	.fail(function (response) { //failure function
-		window.alert(JSON.stringify(response, 2));
-	});
-  }
+		.fail(function (response) { //failure function
+			window.alert(JSON.stringify(response, 2));
+		});
+	}
 };
 var map;
 function mapInit() {	//function to initialize the map
-    map = new google.maps.Map(document.getElementById('map'), {
-            center: {  lat: 47.744788,lng: 32.584842},
-            zoom:2
-        });
-        ko.applyBindings(new VM());
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: {  lat: 47.744788,lng: 32.584842},
+		zoom:2
+	});
+	ko.applyBindings(new VM());
 }
 //map error function
 function maper(){
-  alert("Map Not Found");
+	alert("Map Not Found");
 }
